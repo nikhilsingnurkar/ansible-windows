@@ -1,5 +1,5 @@
 ---
-- hosts: windows
+- hosts: cloudoperator
   gather_facts: false
   roles:
     - powershell-sample 
