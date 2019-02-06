@@ -10,9 +10,11 @@
    src: gethostname.ps1
    dest: 'C:\temp\'
    remote_src: no
+  register: copy_output
 
 - name: Run remote PowerShell Script
   win_command: powershell.exe -ExecutionPolicy ByPass -File C:/temp/gethostname.ps1
   register: script-output
   
-- debug: var=script-output
+- debug: msg= "{{ copy-output }}"  
+- debug: msg= "{{ script-output }}"
