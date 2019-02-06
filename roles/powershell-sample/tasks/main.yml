@@ -1,0 +1,15 @@
+---
+# tasks file for powershell-sample
+
+- name: Create directory structure
+  win_file:
+    path: C:\Temp
+    state: directory
+
+- win_copy:
+   src: gethostname.ps1
+   dest: 'C:\temp\'
+   remote_src: no
+
+- name: Run remote PowerShell Script
+  win_command: powershell.exe -ExecutionPolicy ByPass -File C:/temp/gethostname.ps1
